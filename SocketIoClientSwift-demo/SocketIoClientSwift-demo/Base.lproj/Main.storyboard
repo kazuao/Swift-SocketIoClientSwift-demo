@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SocketIoClientSwift_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pcb-s2-Wil">
+                                <rect key="frame" x="0.0" y="730" width="414" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JH-dp-gzh">
+                                        <rect key="frame" x="167.5" y="0.0" width="79" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="PhD-h3-cz7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Connect"/>
+                                        <connections>
+                                            <action selector="tapConnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfN-Ag-ivK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-TZ-HgD">
+                                        <rect key="frame" x="160.5" y="44" width="93.5" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Sih-Qy-Suh"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Reconnect"/>
+                                        <connections>
+                                            <action selector="tapReconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqO-Vu-x8W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOp-co-brU">
+                                        <rect key="frame" x="158.5" y="88" width="97" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="d7L-eA-GmK"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Disconnect"/>
+                                        <connections>
+                                            <action selector="tapDisconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w97-Kj-uU4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UTF-AI-x72">
+                                <rect key="frame" x="0.0" y="44" width="414" height="686"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UTF-AI-x72" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5oq-W6-dpT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pcb-s2-Wil" secondAttribute="trailing" id="EYv-9c-C1s"/>
+                            <constraint firstItem="pcb-s2-Wil" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rfn-gA-lU6"/>
+                            <constraint firstItem="pcb-s2-Wil" firstAttribute="top" secondItem="UTF-AI-x72" secondAttribute="bottom" id="V74-4j-AEN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pcb-s2-Wil" secondAttribute="bottom" id="kfF-tH-yxj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UTF-AI-x72" secondAttribute="trailing" id="qPe-aH-OOB"/>
+                            <constraint firstItem="UTF-AI-x72" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tiS-Ze-4vS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="1JH-dp-gzh" id="OFc-cM-xSK"/>
+                        <outlet property="disconnectButton" destination="XOp-co-brU" id="Bou-Ff-Hem"/>
+                        <outlet property="reconnectButton" destination="NfI-TZ-HgD" id="cRH-Qb-7gv"/>
+                        <outlet property="tableView" destination="UTF-AI-x72" id="dn2-EL-toG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
